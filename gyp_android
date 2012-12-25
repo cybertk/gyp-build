@@ -16,4 +16,4 @@ HERE=$(dirname $0)
 ROOT_DIR=${HERE}/..
 
 # Off we go.
-ANDROID_BUILD_TOP=`pwd` GYP_DEFINES=${DEFINES} GYP_GENERATORS=android-make ${ROOT_DIR}/build/gyp_build --depth ${ROOT_DIR} *.gyp $*
+ANDROID_BUILD_TOP=`pwd` GYP_DEFINES=${DEFINES} GYP_GENERATORS=android-make ${ROOT_DIR}/build/gyp_build --depth ${ROOT_DIR} $*
