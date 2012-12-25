@@ -16,4 +16,4 @@ HERE=$(dirname $0)
 ROOT_DIR=${HERE}/..
 
 # Off we go.
-GYP_MSVS_VERSION=2008e GYP_DEFINES=${DEFINES} GYP_GENERATORS=msvs ${ROOT_DIR}/build/gyp_build --depth ${ROOT_DIR} *.gyp
+GYP_MSVS_VERSION=2008e GYP_DEFINES=${DEFINES} GYP_GENERATORS=msvs ${ROOT_DIR}/build/gyp_build --depth ${ROOT_DIR} $*
