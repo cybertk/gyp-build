@@ -1,0 +1,19 @@
+#!/bin/sh
+# 
+# Copyright (c) 2012 cybertk.com. All rights reserved.
+
+#################### GYP_DEFINES ####
+DEFINES=" library=static_library
+          os_posix=0
+          OS=win
+          target_arch=ia32
+          clang=0
+          component=static_library
+          use_system_stlport=0
+        "
+
+HERE=$(dirname $0)
+ROOT_DIR=${HERE}/..
+
+# Off we go.
+GYP_MSVS_VERSION=2008e GYP_DEFINES=${DEFINES} GYP_GENERATORS=msvs ${ROOT_DIR}/build/gyp_build --depth ${ROOT_DIR} *.gyp
