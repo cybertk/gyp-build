@@ -17,14 +17,55 @@
           'CharacterSet': '1',
         },
       },
+      'x86_Base': {
+        'abstract': 1,
+        'msvs_settings': {
+          'VCLinkerTool': {
+            # x86
+            'TargetMachine': '1',
+          },
+        },
+        'msvs_configuration_platform': 'Win32',
+      },
+      'Debug_Base': {
+        'abstract': 1,
+        'xcode_settings': {
+          'COPY_PHASE_STRIP': 'NO',
+        },
+        'msvs_settings': {
+          'VCCLCompilerTool': {
+            'PreprocessorDefinitions': ['_DEBUG'],
+            'RuntimeLibrary': '1',
+            'AdditionalOptions': ['/Oy-'],
+          },
+          'VCLinkerTool': {
+            'LinkIncremental': '1',
+          },
+          'VCResourceCompilerTool': {
+            'PreprocessorDefinitions': ['_DEBUG'],
+          },
+        },
+      },
       'Debug': {
-        'inherit_from': ['Common_Base'],
+        'inherit_from': ['Common_Base', 'x86_Base', 'Debug_Base'],
       },
       'Release': {
         'inherit_from': ['Common_Base'],
       },
     },
+
+    # Enable genrating debug info in vs2008e.
+    'msvs_settings': {
+      'VCLinkerTool': {
+        'GenerateDebugInformation': 'true',
+      },
+      'VCCLCompilerTool': {
+        'DebugInformationFormat': '3',
+      },
+    },
+
   },
+
     'xcode_settings': {
         'GCC_VERSION': 'com.apple.compilers.llvm.clang.1_0',
         #'GCC_VERSION': 'com.apple.compilers.llvmgcc42',
