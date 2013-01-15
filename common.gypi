@@ -4,6 +4,7 @@
       ['OS == "ios"', { 'defines': [ 'IOS' ]}],
       ['OS == "android"', { 'defines': [ 'ANDROID' ]}],
       ['OS == "linux"', { 'defines': [ 'LINUX' ]}],
+      ['OS == "win"', { 'defines': [ 'WIN32' ]}],
     ],
 
     'default_configuration': 'Debug',
