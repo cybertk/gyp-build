@@ -33,6 +33,9 @@
         'xcode_settings': {
           'COPY_PHASE_STRIP': 'NO',
         },
+        'cflags': [
+          '-g',
+        ],
         'msvs_settings': {
           'VCCLCompilerTool': {
             'PreprocessorDefinitions': ['_DEBUG'],
